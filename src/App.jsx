@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Dijkstra_Euclides_ProyectUMG">
       <div className="app">
         <motion.div
           initial={{ opacity: 0 }}
