@@ -236,21 +236,23 @@ const DijkstraVisualizerModern = ({
   const handleMouseMove = (e) => {
     if (!draggingNode) return;
     
-    const svg = e.currentTarget;
-    const pt = svg.createSVGPoint();
-    pt.x = e.clientX;
-    pt.y = e.clientY;
-    const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
-    
-    setNodes(nodes.map(node => 
-      node.id === draggingNode 
-        ? { 
-            ...node, 
-            x: Math.max(30, Math.min(670, svgP.x - dragOffset.x)),
-            y: Math.max(30, Math.min(430, svgP.y - dragOffset.y))
-          }
-        : node
-    ));
+    requestAnimationFrame(() => {
+      const svg = e.currentTarget;
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+      
+      setNodes(prevNodes => prevNodes.map(node => 
+        node.id === draggingNode 
+          ? { 
+              ...node, 
+              x: Math.max(30, Math.min(670, svgP.x - dragOffset.x)),
+              y: Math.max(30, Math.min(430, svgP.y - dragOffset.y))
+            }
+          : node
+      ));
+    });
   };
 
   const handleMouseUp = () => {

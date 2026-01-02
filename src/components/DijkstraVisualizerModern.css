@@ -92,6 +92,7 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
+  will-change: transform;
 }
 
 .speed-slider.modern::-webkit-slider-thumb:hover {
@@ -754,6 +755,7 @@
 .graph-svg {
   width: 100%;
   height: 100%;
+  will-change: contents;
 }
 
 .node {
@@ -761,6 +763,7 @@
   stroke-width: 2;
   cursor: pointer;
   transition: 0.3s;
+  will-change: transform, opacity;
 }
 .node.default {
   fill: #3b82f6;
@@ -780,15 +783,21 @@
 .node.path {
   fill: #16a34a;
 }
+.node.dragging {
+  cursor: grabbing;
+  will-change: transform;
+}
 .node-label {
   font-size: 16px;
   font-weight: bold;
   fill: white;
   pointer-events: none;
+  will-change: transform;
 }
 .edge {
   stroke: #64748b;
   transition: all 0.3s ease;
+  will-change: stroke, stroke-width;
 }
 .path-edge {
   stroke: #22c55e;
