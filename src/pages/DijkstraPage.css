@@ -1,0 +1,187 @@
+/* Página del Algoritmo de Dijkstra */
+.dijkstra-page {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dijkstra-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Controles específicos */
+.control-group {
+  margin-bottom: 2rem;
+}
+
+.control-group h4 {
+  color: var(--accent-steel);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.speed-control input[type="range"] {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.speed-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-steel);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.speed-control input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+.speed-control span {
+  color: var(--text-primary);
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Nodos seleccionados */
+.selected-nodes {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.node-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.node-info:last-child {
+  margin-bottom: 0;
+}
+
+.node-info .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.node-info .value {
+  color: var(--accent-steel);
+  font-weight: 600;
+}
+
+/* Información del algoritmo - Dijkstra */
+.dijkstra-page .algorithm-info {
+  border-left: 4px solid var(--accent-steel);
+}
+
+.dijkstra-page .algorithm-info h4 {
+  color: var(--accent-steel);
+}
+
+/* Leyenda */
+.legend {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.legend h4 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.legend-color.start {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.legend-color.end {
+  background: var(--error);
+  border-color: var(--error);
+}
+
+.legend-color.visited {
+  background: var(--completed);
+  border-color: var(--completed);
+}
+
+.legend-color.current {
+  background: var(--processing);
+  border-color: var(--processing);
+}
+
+.legend-color.path {
+  background: var(--optimal-path);
+  border-color: var(--optimal-path);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dijkstra-content {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dijkstra-page {
+    padding: 1rem;
+  }
+  
+  .dijkstra-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .speed-control {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .speed-control span {
+    text-align: center;
+  }
+}

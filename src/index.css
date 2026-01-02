@@ -1,0 +1,131 @@
+/* Paleta de Colores Oscura/Metálica */
+:root {
+  /* Colores Base */
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --surface: #21262D;
+  --surface-hover: #30363D;
+  
+  /* Colores Metálicos */
+  --text-primary: #C9D1D9;
+  --text-secondary: #8B949E;
+  --accent-gold: #FFD700;
+  --accent-copper: #B87333;
+  --accent-steel: #58A6FF;
+  
+  /* Estados */
+  --processing: #FFA657;
+  --completed: #3FB950;
+  --error: #F85149;
+  --optimal-path: #A5A5FF;
+  
+  /* Bordes y Sombras */
+  --border: #30363D;
+  --shadow: rgba(0, 0, 0, 0.3);
+
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+a {
+  color: var(--accent-steel);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-gold);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--text-primary);
+}
+
+button {
+  background: linear-gradient(135deg, var(--surface), var(--surface-hover));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow);
+  border-color: var(--accent-steel);
+  background: linear-gradient(135deg, var(--surface-hover), var(--surface));
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent-steel), var(--accent-copper));
+  color: white;
+  font-weight: 600;
+}
+
+button.primary:hover {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-steel));
+  box-shadow: 0 8px 30px rgba(88, 166, 255, 0.4);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-steel);
+}

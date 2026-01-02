@@ -1,0 +1,934 @@
+/* 🎨 Visualizador Moderno del Algoritmo de Euclides - Paleta Metálica y Oscura */
+:root {
+  /* Colores Metálicos y Oscuros */
+  --dark-bg-primary: #0d1117;
+  --dark-bg-secondary: #161b22;
+  --dark-bg-tertiary: #21262d;
+  --dark-surface: #30363d;
+  
+  --metal-steel: #6b7280;
+  --metal-silver: #9ca3af;
+  --metal-platinum: #d1d5db;
+  --metal-titanium: #4b5563;
+  
+  --accent-copper: #b45309;
+  --accent-bronze: #92400e;
+  --accent-gold-muted: #d97706;
+  --accent-iron: #374151;
+  
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  
+  --border-subtle: #30363d;
+  --border-emphasis: #484f58;
+  --success-muted: #238636;
+  --warning-muted: #9a6700;
+  --error-muted: #da3633;
+}
+
+.euclides-visualizer.modern-enhanced {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, 
+    var(--dark-bg-primary) 0%, 
+    var(--dark-bg-secondary) 50%,
+    var(--dark-bg-primary) 100%);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+/* 📋 Header Moderno */
+.visualizer-header.modern {
+  background: linear-gradient(135deg, 
+    var(--dark-bg-tertiary) 0%, 
+    var(--dark-surface) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-emphasis);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.visualizer-header.modern h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  background: linear-gradient(135deg, 
+    var(--metal-platinum), 
+    var(--metal-silver), 
+    var(--accent-copper));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.025em;
+}
+
+/* 🎛️ Controles Modernos */
+.enhanced-controls.modern {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.speed-control.modern {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  background: var(--dark-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.speed-control.modern label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.speed-slider.modern {
+  width: 120px;
+  height: 6px;
+  background: var(--metal-titanium);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.speed-slider.modern::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--metal-silver), var(--metal-steel));
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.speed-slider.modern::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.main-controls.modern {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn.modern {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  letter-spacing: -0.01em;
+}
+
+.btn.primary.modern {
+  background: linear-gradient(135deg, var(--accent-copper), var(--accent-bronze));
+  color: var(--text-primary);
+  border-color: var(--accent-copper);
+  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.25);
+}
+
+.btn.primary.modern:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(180, 83, 9, 0.35);
+}
+
+.btn.primary.modern:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn.secondary.modern {
+  background: var(--dark-surface);
+  color: var(--text-secondary);
+  border-color: var(--border-emphasis);
+}
+
+.btn.secondary.modern:hover {
+  background: var(--metal-titanium);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* 🔢 Sección de Números Moderna */
+.numbers-input-section.modern {
+  background: linear-gradient(135deg, 
+    var(--dark-bg-tertiary) 0%, 
+    var(--dark-surface) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-emphasis);
+  backdrop-filter: blur(10px);
+}
+
+.numbers-input-section.modern h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.numbers-inputs.modern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.number-input-group.modern {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--dark-surface);
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s ease;
+}
+
+.number-input-group.modern:focus-within {
+  border-color: var(--metal-silver);
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.1);
+}
+
+.number-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 2rem;
+}
+
+.number-input.modern {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+.remove-btn.modern {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--error-muted), #b91c1c);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn.modern:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(218, 54, 51, 0.3);
+}
+
+.add-number-btn.modern {
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, var(--metal-steel), var(--metal-silver));
+  color: var(--text-primary);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.add-number-btn.modern:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+.numbers-preview.modern {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--dark-surface);
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+  border: 1px solid var(--border-subtle);
+}
+
+/* 📊 Contenedor de Procesos Moderno */
+.all-processes-container.modern {
+  width: 100%;
+}
+
+.processes-grid.modern {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.process-display.modern {
+  background: linear-gradient(135deg, 
+    var(--dark-bg-tertiary) 0%, 
+    var(--dark-surface) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.process-display.modern.current-process {
+  border-color: var(--accent-copper);
+  background: linear-gradient(135deg, 
+    rgba(180, 83, 9, 0.1) 0%, 
+    var(--dark-surface) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(180, 83, 9, 0.15);
+}
+
+.process-display.modern.completed-process {
+  border-color: var(--success-muted);
+  background: linear-gradient(135deg, 
+    rgba(35, 134, 54, 0.1) 0%, 
+    var(--dark-surface) 100%);
+}
+
+.process-display.modern.pending-process {
+  opacity: 0.7;
+}
+
+/* 🏷️ Header de Proceso Moderno */
+.process-header.modern {
+  margin-bottom: 1.5rem;
+}
+
+.process-header.modern h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.process-badge.modern {
+  background: linear-gradient(135deg, var(--metal-steel), var(--metal-titanium));
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.process-result.modern {
+  background: linear-gradient(135deg, var(--success-muted), #16a34a);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.remaining-numbers.modern {
+  background: rgba(107, 114, 128, 0.15);
+  color: var(--metal-silver);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-style: italic;
+  border-left: 3px solid var(--metal-steel);
+  font-size: 0.875rem;
+}
+
+/* 📈 Tabla Formato EXACTO de la Imagen */
+.enhanced-traditional-table.modern {
+  margin: 1.5rem 0;
+}
+
+.table-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.formula-text.modern {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 1rem 1.5rem;
+  background: var(--dark-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+.euclides-table-container.modern {
+  background: var(--dark-surface);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--border-subtle);
+  overflow-x: auto;
+}
+
+.euclides-table.modern {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+  background: var(--dark-bg-tertiary);
+  border-radius: 8px;
+}
+
+/* Fila de Cocientes - ARRIBA */
+.quotients-header {
+  background: var(--dark-bg-secondary);
+}
+
+.label-cell {
+  background: var(--metal-titanium);
+  color: var(--text-primary);
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-emphasis);
+}
+
+.quotient-header {
+  background: var(--dark-surface);
+  padding: 0.8rem;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+  min-width: 80px;
+}
+
+.quotient-cell.modern {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  background: var(--dark-bg-tertiary);
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.quotient-cell.modern.revealed {
+  color: var(--metal-silver);
+  border-color: var(--metal-steel);
+  background: linear-gradient(135deg, 
+    rgba(156, 163, 175, 0.15), 
+    rgba(156, 163, 175, 0.05));
+}
+
+.quotient-cell.modern.current {
+  color: var(--accent-copper);
+  border-color: var(--accent-copper);
+  background: linear-gradient(135deg, 
+    rgba(180, 83, 9, 0.3), 
+    rgba(180, 83, 9, 0.1));
+  box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.3);
+  transform: scale(1.05);
+}
+
+.quotient-cell.modern.hidden {
+  color: var(--text-muted);
+  opacity: 0.6;
+  background: var(--dark-bg-secondary);
+}
+
+.arrow-cell {
+  background: var(--metal-titanium);
+  color: var(--text-primary);
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-emphasis);
+}
+
+/* Fila Principal - A y B EN EL CENTRO */
+.main-numbers-row {
+  background: var(--dark-bg-secondary);
+}
+
+.side-label {
+  background: var(--metal-titanium);
+  color: var(--text-primary);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: 1px solid var(--border-emphasis);
+}
+
+.main-number {
+  background: var(--dark-surface);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  border: 2px solid var(--border-emphasis);
+  min-width: 80px;
+}
+
+.main-number.left {
+  border-right: 1px solid var(--metal-steel);
+}
+
+.main-number.right {
+  border-left: 1px solid var(--metal-steel);
+}
+
+.next-number {
+  background: var(--dark-surface);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+  min-width: 80px;
+}
+
+.number-cell.modern {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  background: var(--dark-bg-tertiary);
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.number-cell.modern.revealed {
+  color: var(--text-primary);
+  border-color: var(--metal-steel);
+  background: var(--dark-surface);
+}
+
+.number-cell.modern.current {
+  color: var(--accent-copper);
+  border-color: var(--accent-copper);
+  background: linear-gradient(135deg, 
+    rgba(180, 83, 9, 0.3), 
+    rgba(180, 83, 9, 0.1));
+  box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.3);
+}
+
+.number-cell.modern.hidden {
+  color: var(--text-muted);
+  opacity: 0.6;
+  background: var(--dark-bg-secondary);
+}
+
+/* Fila de Residuos - ABAJO */
+.remainders-row {
+  background: var(--dark-bg-secondary);
+}
+
+.remainder-header {
+  background: var(--dark-surface);
+  padding: 0.8rem;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+  min-width: 80px;
+}
+
+.remainder-cell.modern {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  background: var(--dark-bg-tertiary);
+  border: 2px solid var(--border-subtle);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.remainder-cell.modern.revealed {
+  color: var(--metal-silver);
+  border-color: var(--metal-steel);
+  background: linear-gradient(135deg, 
+    rgba(156, 163, 175, 0.15), 
+    rgba(156, 163, 175, 0.05));
+}
+
+.remainder-cell.modern.current {
+  color: var(--accent-copper);
+  border-color: var(--accent-copper);
+  background: linear-gradient(135deg, 
+    rgba(180, 83, 9, 0.3), 
+    rgba(180, 83, 9, 0.1));
+  box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.3);
+  transform: scale(1.05);
+}
+
+.remainder-cell.modern.hidden {
+  color: var(--text-muted);
+  opacity: 0.6;
+  background: var(--dark-bg-secondary);
+}
+
+.remainder-cell.modern.mcd-final {
+  background: linear-gradient(135deg, var(--success-muted), #16a34a);
+  color: white;
+  border-color: var(--success-muted);
+  font-weight: 800;
+  box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.4);
+}
+
+.final-indicator {
+  background: var(--metal-titanium);
+  color: var(--text-primary);
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid var(--border-emphasis);
+}
+
+.mcd-final-result {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--success-muted), #16a34a);
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(35, 134, 54, 0.4);
+}
+
+/* 💬 Explicación del Paso Moderna */
+.current-step-explanation.modern {
+  background: linear-gradient(135deg, 
+    rgba(107, 114, 128, 0.1), 
+    rgba(107, 114, 128, 0.05));
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--metal-steel);
+}
+
+.step-detail.modern {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.step-number.modern {
+  background: linear-gradient(135deg, var(--metal-steel), var(--metal-titanium));
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.step-operation.modern {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+  font-weight: 500;
+  background: var(--dark-bg-tertiary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* 🎯 Resultado Final Moderno */
+.final-result-section.modern {
+  background: linear-gradient(135deg, 
+    rgba(35, 134, 54, 0.1) 0%, 
+    var(--dark-surface) 50%,
+    rgba(35, 134, 54, 0.1) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid var(--success-muted);
+  backdrop-filter: blur(10px);
+}
+
+.result-content.modern h3 {
+  color: var(--success-muted);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.final-mcd-formula.modern {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+.final-mcd-value.modern {
+  color: var(--success-muted);
+  font-size: 2.5rem;
+  margin-left: 0.75rem;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.result-explanation.modern {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* 📊 Resumen de Procesos Moderno */
+.processes-summary.modern {
+  background: linear-gradient(135deg, 
+    var(--dark-bg-tertiary) 0%, 
+    var(--dark-surface) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-emphasis);
+  backdrop-filter: blur(10px);
+}
+
+.processes-summary.modern h4 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.processes-timeline.modern {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.process-summary.modern {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--dark-surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.process-summary.modern.current {
+  border-color: var(--accent-copper);
+  background: linear-gradient(135deg, 
+    rgba(180, 83, 9, 0.1), 
+    var(--dark-surface));
+  transform: translateX(8px);
+}
+
+.process-summary.modern.completed {
+  border-color: var(--success-muted);
+  background: linear-gradient(135deg, 
+    rgba(35, 134, 54, 0.1), 
+    var(--dark-surface));
+}
+
+.process-summary.modern.pending {
+  opacity: 0.6;
+}
+
+.process-number.modern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--metal-steel), var(--metal-titanium));
+  border: 2px solid var(--border-emphasis);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.process-info.modern {
+  flex: 1;
+}
+
+.process-title.modern {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+.process-steps {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* 📱 Responsive Moderno */
+@media (max-width: 1024px) {
+  .processes-grid.modern {
+    gap: 1.5rem;
+  }
+  
+  .process-display.modern {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .euclides-visualizer.modern-enhanced {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .visualizer-header.modern h3 {
+    font-size: 1.5rem;
+  }
+  
+  .enhanced-controls.modern {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .numbers-inputs.modern {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+  
+  .traditional-table.modern th,
+  .traditional-table.modern td {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .final-mcd-formula.modern {
+    font-size: 1.25rem;
+  }
+  
+  .final-mcd-value.modern {
+    font-size: 2rem;
+  }
+  
+  .step-detail.modern {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .step-operation.modern {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .visualizer-header.modern,
+  .numbers-input-section.modern,
+  .process-display.modern,
+  .final-result-section.modern,
+  .processes-summary.modern {
+    padding: 1.25rem;
+  }
+  
+  .traditional-table-container.modern {
+    padding: 1rem;
+    overflow-x: scroll;
+  }
+  
+  .final-result-section.modern {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ✨ Animaciones Suaves y Elegantes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones aplicadas */
+.enhanced-traditional-table.modern {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.final-result-section.modern {
+  animation: scaleIn 0.8s ease-out;
+}
+
+.process-summary.modern {
+  animation: slideInRight 0.4s ease-out;
+}

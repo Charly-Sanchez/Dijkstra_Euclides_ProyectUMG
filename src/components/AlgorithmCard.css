@@ -1,0 +1,174 @@
+/* Tarjeta de Algoritmo */
+.algorithm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.algorithm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-copper));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.algorithm-card:hover::before {
+  opacity: 1;
+}
+
+.algorithm-card:hover {
+  border-color: var(--accent-steel);
+  box-shadow: 0 16px 48px rgba(88, 166, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Header de la tarjeta */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.algorithm-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.card-header h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Descripción */
+.algorithm-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Lista de características */
+.features-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.feature-bullet {
+  color: var(--accent-steel);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Botón de explorar */
+.algorithm-link {
+  display: block;
+  text-decoration: none;
+}
+
+.explore-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-btn.gold {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-copper));
+  color: var(--bg-primary);
+}
+
+.explore-btn.steel {
+  background: linear-gradient(135deg, var(--accent-steel), var(--accent-copper));
+  color: white;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.explore-btn.gold:hover {
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+}
+
+.explore-btn.steel:hover {
+  box-shadow: 0 12px 30px rgba(88, 166, 255, 0.4);
+}
+
+.btn-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.explore-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Variantes de color */
+.algorithm-card.gold:hover::before {
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-copper));
+}
+
+.algorithm-card.steel:hover::before {
+  background: linear-gradient(90deg, var(--accent-steel), var(--accent-copper));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .algorithm-card {
+    padding: 1.5rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .algorithm-icon {
+    font-size: 2.5rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .explore-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
