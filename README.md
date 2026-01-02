@@ -43,7 +43,7 @@ Un elegante visualizador interactivo que demuestra el funcionamiento del **Algor
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/Charly-Sanchez/Dijkstra_Euclides_ProyectUMG.git
+git clone ghttps://github.com/Charly-Sanchez/Dijkstra_Euclides_ProyectUMG.git
 
 # Navegar al directorio
 cd Proyecto-Final-2
@@ -134,7 +134,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más información.
 
 ## 👥 Autores
 
-- **Carlos Sánchez** - Desarrollo principal
+- **[Carlos Sánchez](https://charly-sanchez.github.io/Carlos_Sanchez_Portafolio/)** - Desarrollo principal
 - Proyecto desarrollado para el curso de Matemática Discreta
 
 ## 🙏 Agradecimientos
