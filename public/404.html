@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Dijkstra_Euclides_ProyectUMG/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualizador de Algoritmos - Euclides y Dijkstra</title>
     <script type="text/javascript">
@@ -19,9 +18,19 @@
         }
       }(window.location))
     </script>
+    <script type="text/javascript">
+      // Redirect to base path
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/Dijkstra_Euclides_ProyectUMG/src/main.jsx"></script>
   </body>
 </html>
